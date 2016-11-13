@@ -1,8 +1,6 @@
 <?php
-
 if (!defined('APPPATH'))
 	exit('No direct script access allowed');
-
 /**
  * helpers/formfields_helper.php
  *
@@ -27,7 +25,6 @@ if (!defined('APPPATH'))
  */
 if (!function_exists('makeTextField'))
 {
-
 	function makeTextField($label, $name, $value, $explain = "", $maxlen = 40, $size = 25, $disabled = false)
 	{
 		$CI = &get_instance();
@@ -42,10 +39,7 @@ if (!function_exists('makeTextField'))
 		);
 		return $CI->parser->parse('_fields/textfield', $parms, true);
 	}
-
 }
-
-
 /**
  * Construct a form row to edit a large field.
  * 
@@ -58,7 +52,6 @@ if (!function_exists('makeTextField'))
  */
 if (!function_exists('makeTextArea'))
 {
-
 	function makeTextArea($label, $name, $value, $explain = "", $size = 25, $rows = 5, $disabled = false)
 	{
 		$height = (int) (strlen($value) / 80) + 1;
@@ -76,9 +69,7 @@ if (!function_exists('makeTextArea'))
 		);
 		return $CI->parser->parse('_fields/textarea', $parms, true);
 	}
-
 }
-
 /**
  * Construct a form row to edit a checkbox.
  * @param <type> $label
@@ -89,7 +80,6 @@ if (!function_exists('makeTextArea'))
  */
 if (!function_exists('makeCheckbox'))
 {
-
 	function makeCheckbox($label, $name, $value, $explain = "", $disabled = false)
 	{
 		$CI = &get_instance();
@@ -102,9 +92,7 @@ if (!function_exists('makeCheckbox'))
 		);
 		return $CI->parser->parse('_fields/checkbox', $parms, true);
 	}
-
 }
-
 /**
  * Construct a form row to edit a radiobutton
  * @param <type> $label
@@ -114,7 +102,6 @@ if (!function_exists('makeCheckbox'))
  */
 if (!function_exists('makeRadioButtons'))
 {
-
 	function makeRadioButtons($title, $name, $value, $choices, $explain = "", $disabled = false)
 	{
 		$CI = &get_instance();
@@ -138,9 +125,7 @@ if (!function_exists('makeRadioButtons'))
 		$parms['options'] = $options;
 		return $CI->parser->parse('_fields/radio_buttons', $parms, true);
 	}
-
 }
-
 /**
  * Construct a form row to edit a combo box field.
  * 
@@ -153,7 +138,6 @@ if (!function_exists('makeRadioButtons'))
  */
 if (!function_exists('makeCombobox'))
 {
-
 	function makeCombobox($label, $name, $value, $options, $explain = "", $disabled = false)
 	{
 		$CI = &get_instance();
@@ -164,7 +148,6 @@ if (!function_exists('makeCombobox'))
 			'explain' => $explain,
 			'disabled' => ($disabled ? 'disabled="disabled"' : '')
 		);
-
 		$choices = array();
 		foreach ($options as $val => $display)
 		{
@@ -176,12 +159,9 @@ if (!function_exists('makeCombobox'))
 			$choices[] = $row;
 		}
 		$parms['options'] = $choices;
-
 		return $CI->parser->parse('_fields/combofield', $parms, true);
 	}
-
 }
-
 /**
  * Make a submit button.
  * 
@@ -191,7 +171,6 @@ if (!function_exists('makeCombobox'))
  */
 if (!function_exists('makeSubmitButton'))
 {
-
 	function makeSubmitButton($label, $title, $css_extras = "")
 	{
 		$CI = &get_instance();
@@ -202,5 +181,4 @@ if (!function_exists('makeSubmitButton'))
 		);
 		return $CI->parser->parse('_fields/submit', $parms, true);
 	}
-
 }
