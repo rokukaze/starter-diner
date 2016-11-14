@@ -1,5 +1,13 @@
-<h2>Menu Maintenance - Editing</h2>
-<form action="/crud/save" method="post">
+<h2>Menu Maintenance - {action}</h2>
+{error_messages}
+{fpicture}
+<div class="form-group">
+        <label for="replacement">Replacement picture</label>
+        <input type="file" id="replacement" name="replacement"/>
+</div>
+{fcategory}
+
+<form action="/crud/save" method="post" enctype="multipart/form-data">
     {fid}
     {fname}
     {fdescription}
@@ -7,4 +15,6 @@
     {fpicture}
     {fcategory}
     {zsubmit} <a class="btn btn-default" role="button" href="/crud/cancel">Cancel</a>
+    <a class="btn btn-default" role="button" href="/crud/delete">Delete</a>
 </form>
+
