@@ -4,4 +4,5 @@
 		<h2>{name}</h2>
         <div class="hidden-xs">{description}</div>
 	</div>
+    
 </div>
